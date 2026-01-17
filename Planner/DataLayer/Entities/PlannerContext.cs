@@ -12,5 +12,6 @@ namespace DataLayer.Entities
 
         public DbSet<ActivityEntity> Activities { get; set; }
         public DbSet<AppointmentActivityEntity> AppointmentActivities { get; set; }
+        public DbSet<BirthdayActivityEntity> BirthdayActivities { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace DataLayer.Repositories
         public async Task<Activity> Read(int ActivityId)
         {
             var entity = await _context.Activities.SingleOrDefaultAsync(a => a.ActivityId == ActivityId);
-            return entity.ToDomainModel();
+            return entity/*.ToDomainModel()*/;
         }
 
         public async Task<List<Activity>> ReadAll()
@@ -55,9 +55,10 @@ namespace DataLayer.Repositories
             return entity/*.ToDomainModel()*/;
         }
 
-        public async Task<Activity> Delete(int ActivityId)
+        public async Task Delete(int ActivityId)
         {
             var entity = await _context.Activities.SingleOrDefaultAsync(a => a.ActivityId == Activity);
+            _context.Activities.Remove(entity);
             _context.SaveChangesAsync();
         }
     }
