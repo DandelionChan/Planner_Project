@@ -21,9 +21,21 @@ namespace DataLayer.Repositories
         public async Task<AppointmentActivity> Create(AppointmentActivity model)
         {
             var entity = model.ToEntity();
-            await _context.Activities.AddAsync(entity);
+            await _context.AppointmentActivities.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity/*.ToDomainModel*/;
+        }
+
+        public async Task<AppointmentActivity> Read(int id)
+        {
+            var entity = await _context.AppointmentActivities.SingleOrDefaultAsync(a => a.ActivityId == id);
+            return entity;
+        }
+
+        public async Task<List<AppointmentActivity>> ReadAll()
+        {
+            var entities = await _context.AppointmentActivities.ToListAsync();
+            return entities;
         }
 
         public async Task<AppointmentActivity> Update(AppointmentActivity model)
@@ -36,9 +48,18 @@ namespace DataLayer.Repositories
             entity.Date = updated.Date;
             entity.Description = updated.Description;
             entity.Color = updated.Color;
+            entity.StartTime = updated.StartTime;
+            entity.EndTime = updated.EndTime;
 
             await _context.SaveChangesAsync();
             return entity;
+        }
+
+        public async Task Delete(int id)
+        {
+            var entity = await _context.AppointmentActivities.SingleOrDefaultAsync(a => a.ActivityId == id);
+            _context.AppointmentActivities.Remove(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }
