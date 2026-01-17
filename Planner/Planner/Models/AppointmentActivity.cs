@@ -1,11 +1,10 @@
-﻿using BusinessLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuisnessLayer
+namespace BuisnessLayer.Models
 {
     public class AppointmentActivity : Activity
     {
@@ -14,14 +13,14 @@ namespace BuisnessLayer
         protected AppointmentActivity() { }
         public AppointmentActivity(
             string name,
-            int personId,
+            int userId,
             DateOnly date,
             string description,
             string color,
             RecurrenceType recurrence,
             TimeOnly startTime,
             TimeOnly endTime)
-            : base(name, personId, date, description, color, recurrence)
+            : base(name, userId, date, description, color, recurrence)
         {
             StartTime = startTime;
             EndTime = endTime;
@@ -29,7 +28,7 @@ namespace BuisnessLayer
 
         public void ValidateTime()
         {
-           if (EndTime < StartTime)
+            if (EndTime < StartTime)
             {
                 throw new InvalidOperationException("End time cannot be earlier than start time.");
             }

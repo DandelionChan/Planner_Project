@@ -1,8 +1,8 @@
-﻿using BusinessLayer;
+﻿using BuisnessLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataLayer
+namespace DataLayer.Configurations
 {
     public class ActivityConfiguration : IEntityTypeConfiguration<Activity>
     {

@@ -1,4 +1,4 @@
-﻿using BuisnessLayer;
+﻿using BuisnessLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer
+namespace DataLayer.Configurations
 {
     public class AppointmentActivityConfiguration : IEntityTypeConfiguration<AppointmentActivity>
     {

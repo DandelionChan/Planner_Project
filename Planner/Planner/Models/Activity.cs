@@ -1,6 +1,4 @@
-﻿using BuisnessLayer;
-
-namespace BusinessLayer
+﻿namespace BuisnessLayer.Models
 {
     public abstract class Activity
     {
@@ -23,7 +21,7 @@ namespace BusinessLayer
 
         public RecurrenceType Recurrence { get; set; }
 
-        protected Activity() { } 
+        protected Activity() { }
 
         protected Activity(
             string name,

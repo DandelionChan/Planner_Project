@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BuisnessLayer;
+using BuisnessLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataLayer
+namespace DataLayer.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

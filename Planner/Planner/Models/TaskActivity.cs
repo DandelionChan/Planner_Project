@@ -1,11 +1,10 @@
-﻿using BusinessLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuisnessLayer
+namespace BuisnessLayer.Models
 {
     public class TaskActivity : Activity
     {
@@ -15,13 +14,13 @@ namespace BuisnessLayer
         protected TaskActivity() { }
         public TaskActivity(
             string name,
-            int personId,
+            int userId,
             DateOnly date,
             string description,
             string color,
             RecurrenceType recurrence,
             DateOnly dueDate)
-            : base(name, personId, date, description, color, recurrence)
+            : base(name, userId, date, description, color, recurrence)
         {
             DueDate = dueDate;
             IsCompleted = false;
@@ -35,5 +34,5 @@ namespace BuisnessLayer
             return "Task";
         }
     }
-  
+
 }
